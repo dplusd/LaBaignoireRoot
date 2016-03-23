@@ -1,5 +1,101 @@
 <html>
-<body>
-<h1>test</h1>
-</body>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<body dir="rtl" lang="ar">
+
+
+<div style="width:600;height:600" dir=rtl>
+<div style="height=20;background-color:white;" align=center>
+<audio src="audio.mp3" id="audioPlayer" autoplay = true controls=true width=100 height=20></audio>
+
+<script>
+var vid = document.getElementById("audioPlayer");
+var selectedParagraph = null
+vid.onprogress = function() {
+    window.setInterval(myFunc, 1000)
+};
+
+function selectParagraph(p) {
+	selectedParagraph = p;
+	selectedParagraph.style.backgroundColor="yellow"
+	offset = selectedParagraph.offsetTop;
+	document.getElementById("contentDiv").scrollTop = offset - document.getElementById("contentDiv").offsetTop;
+}
+function myFunc() {
+	//alert(vid.currentTime)
+	allParagraphs = document.body.getElementsByTagName("*")
+	lastParagraph = null
+	for (i = 0 ; i < allParagraphs.length ; ++i) {		
+		p = allParagraphs[i]
+		if (p.hasAttribute("start_time") && p.getAttribute("start_time") < vid.currentTime) {
+			lastParagraph = p
+		}
+		else if (p.hasAttribute("start_time") && p.getAttribute("start_time") > vid.currentTime) {					
+			if (selectedParagraph != lastParagraph) {
+				selectParagraph(lastParagraph)
+			}
+			break;			
+		}
+		else {
+			//last paragraph should be selected
+			if (p.hasAttribute("start_time") && selectedParagraph != p)
+				selectParagraph(p)
+		}
+	}
+	for (i = 0 ; i < allParagraphs.length ; ++i) {		
+		p = allParagraphs[i]
+		if (p != selectedParagraph)
+			p.style.backgroundColor="white"
+	}
+	
+}
+</script>
+</div>
+<div style="height:500; overflow: auto;" id="contentDiv">
+<p start_time = 3>
+في بحيفا عمارة كبيرة كبيرة بتشوفوها من كل محل بحيفا. اذا (انا) كنت، او (انتِ) كنت او (انتِ) كنتِ او (هو) كان او (هي) كانت او (نحنا) كنا او (انتو) كنتو او (هم) كانو بالبلد تحت او بالجبل فوق...هاي العمارة موجودة بالظبط تحت "قبة عباس"... عمارة كبيرة كبيرة ... 3 عمارات موصولات ببعض: عباس 18 و عباس 16 وعباس 14 بكل عمارة في 10 طوابق 
+</p>
+<p start_time = 35>
+بكل عمارة في 20 بيت مع بعض في 60 بيت 
+</p>
+<p  start_time = 40>
+في يوم سبت من ايام شتا 2016 بساعات المسا (بين الساعة 4 للساعة 7 بالليل) ...
+" اليغرا" بنت صغيرة عمرها 10 سنين، واقفة مقبيل اصانصير عباس 14 ، معها واقف "ابو جوني" الجار من الطابق العاشر، و"فيولا" الجارة الساكنة بالطابق الخامس واقفة معهم... هي (فيولا) احلى جارة بالعمارة وبشارع عباس وبحيفا كلها. كل نسوان البلد بتغار منها... (انا )بغار و(انتِ) بتغار و(انتِ) بتغار وكمان "فايز" الجار من الطابق الثامن (هو) بيغار و"انطوانيت" من الطابق الخامس  (هي) بتغار ونحنا بنات حيفا (نحنا) بنغار  وبنات تل ابيب (انتو) بتغارو وكل الجيران والجارات بعباس 14 (هم) بيغارو من فيولا، احلى جارة وامرأة بعباس 14 وبكل حيفا . 
+</p>
+<p start_time = 88>
+كمان "ام الوليد " من الطابق السادس واقفة .... كلهم واقفين مقبيل الاصانصير...
+</p>
+<p start_time = 97>
+بيوصل الأصانصير ابو جوني بيفتح الباب ام جوني بتفوت وبعدين فيولا واليغرا
+</p>
+<p start_time = 104>
+" ستوب.. ستوب... وقفو... وقفو... بليز وقفو... ابو جوني ... " 
+</p>
+<p>
+<span start_time=105>
+ابو جوني: ياللا يا فايز فش عنا كل اليوم <br>
+</span>
+<span start_time = 107>
+اليغرا بتكبس على كباسات الاصانصير<br>
+</span>
+10 لابو جوني، 6 لفيولا، 5 لأم الوليد ، 8 لفايز <br>
+فايز: مسا الخير<br>
+كلهم: مسا النور<br>
+ام الوليد: كيف الحال فايز؟ ؟<br>
+فايز: او كي..منيح، تمام...  <br>
+اليغرا : واحد (1)<br>
+ابوجوني: فيولا كيفك؟<br>
+فيولا: منيحا ابو جوني. كيف ام جوني وطوني وموني وجوني؟<br>
+اليغرا: اتينين (2)<br>
+ابو جوني: مناح! ام جوني مبسوطة، طوني وموني مبسوطين وانا كمان مبسوط... جوني هيك...هيك<br>
+اليغرا : تلاتة (3)<br>
+ام الوليد: شو فيولا وين كنت مبارح؟<br>
+فيولا: اه...احم احم احم.. مبارح وين كنت....؟؟!!<br>
+اليغرا:  اربعة (4)<br>
+اليغرا: لا.... لا..... لا الأصانصير وقف <br>
+فايز: اليغرا حبيبتي رلاكس... اهدي! دونت بي افرايد! ما تخافيش<br>
+ابو جوني بيضرب على باب الأصانصير وبينادي : يا هو! يا جماعة! يا جيران! الأصانصير عالقان<br>
+فايز: هالو هالو اني بادي هير !هالو هالو في حدا هون! .... نحنا عالقانين!<br>
+</p>
+</div>
+</div>
 </html>
