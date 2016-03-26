@@ -2,15 +2,48 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <script type="text/javascript" src="bin/Debug/obj.json"></script>
-    <script>
-        
-        a = JSON.parse(story)
-        alert(story)
 
-    </script>
+    
 </head>
 <body>
-    
+<div id ="contentDiv" style="width:100%;height:100%" dir="rtl">
+
+</div>
+    <script>
+
+        function processStory(json) {
+            var story = JSON.parse(request.responseText);
+            var lines = story.Lines;
+            var paragraphs = story.Paragraphs
+            mainDiv = document.getElementById("contentDiv");
+            for (i = 0 ; i < paragraphs.length ; ++i) {
+                newP = document.createElement("P")
+                var Text = "";
+                for (ln = paragraphs[i]._StartLine ; ln < paragraphs[i]._EndLine ; ++ln)
+                    Text += lines[ln] + "<br>"
+                newP.innerHTML = Text;
+                mainDiv.appendChild(newP);
+            }
+        }
+        var request = new XMLHttpRequest();
+        request.open("GET", "https://rawgit.com/dplusd/LaBaignoireRoot/master/source/ClassProducer/ClassProducer/bin/Debug/obj.json", true);
+        request.onload = function (e) {
+            if (request.readyState === 4) {
+                if (request.status === 200) {
+                    processStory(request.responseText);
+                } else {
+                    console.error(request.statusText);
+                }
+            }
+        };
+        request.onerror = function (e) {
+            console.error(request.statusText);
+        };
+        request.send(null)
+        
+
+
+
+    </script>
 </body>
 </html>
