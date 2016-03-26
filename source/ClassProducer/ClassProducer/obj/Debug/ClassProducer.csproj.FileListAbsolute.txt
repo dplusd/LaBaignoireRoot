@@ -1,0 +1,14 @@
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\bin\Debug\ClassProducer.exe.config
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\bin\Debug\ClassProducer.exe
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\bin\Debug\ClassProducer.pdb
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\bin\Debug\Interop.WMPLib.dll
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\ClassProducer.csprojResolveAssemblyReference.cache
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\Interop.WMPLib.dll
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\ClassProducer.csproj.ResolveComReference.cache
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\ClassProducer.Form1.resources
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\ClassProducer.Properties.Resources.resources
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\ClassProducer.csproj.GenerateResource.Cache
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\ClassProducer.exe
+C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\source\ClassProducer\ClassProducer\obj\Debug\ClassProducer.pdb
