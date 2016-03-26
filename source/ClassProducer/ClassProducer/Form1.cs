@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ClassProducer
 {
@@ -108,6 +111,15 @@ namespace ClassProducer
         private void btnPlay_Click(object sender, EventArgs e)
         {
             rtbText.Text = story.Taatik;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FileStream stream1 = new FileStream("obj.json", FileMode.Create);
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(StoryReader), new Type[] { typeof(Paragraph) });
+            ser.WriteObject(stream1, story);
+            stream1.Close();
+            
         }
     }
 }

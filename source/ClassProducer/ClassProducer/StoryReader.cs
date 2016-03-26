@@ -25,12 +25,18 @@ namespace ClassProducer
         internal StoryReader() : this(@"C:\Users\Alma\Documents\GitHub\LaBaignoireRoot\episode1")
         {
         }
-
+        [DataMember]
         public List<Paragraph> Paragraphs
         {
             get
             {
                 return _Paragraphs;
+            }
+            set
+            {
+                _Paragraphs = value;
+                foreach (Paragraph p in _Paragraphs)
+                    p.Story = this;
             }
         }
             
@@ -97,8 +103,7 @@ namespace ClassProducer
         private List<Paragraph> CalculateParagraphs()
         {
             List<Paragraph> RetVal = new List<Paragraph>();
-            
-            
+                        
             for (int StartLine = 0; StartLine < _Lines.Length; ++StartLine)
             {
                 if (_Lines[StartLine] != string.Empty)
@@ -108,19 +113,21 @@ namespace ClassProducer
                     StartLine = EndLine;
                 }
             }
-
-            int StartChar = 0;
-            foreach (Paragraph p in RetVal)
-                StartChar = p.SetStartCharacter(StartChar);
+            //int StartChar = 0;
+            //foreach (Paragraph p in RetVal)
+            //    StartChar = p.SetStartCharacter(StartChar);
             return RetVal;
-
         }
-
+        [DataMember]
         public string[] Lines
         {
             get
             {
                 return _Lines;
+            }
+            set
+            {
+                _Lines = value;
             }
         }
 
@@ -128,25 +135,22 @@ namespace ClassProducer
         {
             while (StartLine < _Lines.Length && _Lines[StartLine] != string.Empty)
                 ++StartLine;
-
             while (StartLine + 1 < _Lines.Length && _Lines[StartLine + 1] == string.Empty)
                 ++StartLine;
-
             return StartLine;
         }
-
 
         private string ReadFile()
         {
             return ReadFile(_TextFile);
         }
+
         private string ReadFile(string File)
         {
             StreamReader reader = new StreamReader(File);
             string retVal = reader.ReadToEnd();
             reader.Close();
             return retVal;
-
         }
 
         internal void CreateCharMap()
@@ -165,7 +169,7 @@ namespace ClassProducer
             StreamWriter writer = new StreamWriter("test.txt");
             foreach (char c in chars)
             {
-                        writer.WriteLine(String.Format("{0}\t{1}\t{2}", c, Values[c], Convert.ToInt32(c).ToString("X")));
+                writer.WriteLine(String.Format("{0}\t{1}\t{2}", c, Values[c], Convert.ToInt32(c).ToString("X")));
             }
             writer.Close();
         }
@@ -177,12 +181,16 @@ namespace ClassProducer
                 return TextFile;
             }
         }
-
+        [DataMember]
         public string AudioFile
         {
             get
             {
                 return _AudioFile;
+            }
+            set
+            {
+                _AudioFile = value;
             }
         }
 
@@ -200,6 +208,5 @@ namespace ClassProducer
                 return files[0];
             throw new Exception("More than one file was found");
         }
-
     }
 }

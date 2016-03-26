@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Runtime.Serialization;
 namespace ClassProducer
 {
+    [DataContract]
     class Paragraph
     {
         private StoryReader _Story;
-        private int _StartLine, _EndLine, _StartCharacter;
+        [DataMember]
+        private int _StartLine;
+        [DataMember]
+        private int _EndLine;
         private string _Text;
-        private double _StartAudio, _EndAudio;
         
+        private double _StartAudio;
+        
+        private double _EndAudio;
 
+        [DataMember]
         public double StartAudioPos
         {
             get
@@ -25,7 +32,7 @@ namespace ClassProducer
                 _StartAudio = value;
             }
         }
-
+        [DataMember]
         public double EndAudioPos
         {
             get
@@ -38,11 +45,11 @@ namespace ClassProducer
             }
         }
 
-        internal int SetStartCharacter(int StartChar)
-        {
-            _StartCharacter = StartChar;
-            return _StartCharacter + CharLength;
-        }
+        //internal int SetStartCharacter(int StartChar)
+        //{
+        //    _StartCharacter = StartChar;
+        //    return _StartCharacter + CharLength;
+        //}
         
 
         public double SetAudioBounds(double StartAudio, double secondPerCharacter)
@@ -99,8 +106,6 @@ namespace ClassProducer
             }
         }
 
-      
-
-       
+        public StoryReader Story { get { return _Story; } internal set { _Story = value; } }
     }
 }
