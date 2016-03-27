@@ -34,6 +34,10 @@
             this.Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnPlayStart = new System.Windows.Forms.Button();
+            this.btnPlayEnd = new System.Windows.Forms.Button();
+            this.btnSetStart = new System.Windows.Forms.Button();
+            this.btnSetEnd = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtEndPosition = new System.Windows.Forms.TextBox();
@@ -41,10 +45,6 @@
             this.txtStartPosition = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lstParagraphs = new System.Windows.Forms.ListBox();
-            this.btnSetEnd = new System.Windows.Forms.Button();
-            this.btnSetStart = new System.Windows.Forms.Button();
-            this.btnPlayEnd = new System.Windows.Forms.Button();
-            this.btnPlayStart = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             this.panel3.SuspendLayout();
@@ -108,13 +108,53 @@
             this.panel3.Size = new System.Drawing.Size(200, 601);
             this.panel3.TabIndex = 3;
             // 
+            // btnPlayStart
+            // 
+            this.btnPlayStart.Location = new System.Drawing.Point(21, 385);
+            this.btnPlayStart.Name = "btnPlayStart";
+            this.btnPlayStart.Size = new System.Drawing.Size(75, 23);
+            this.btnPlayStart.TabIndex = 10;
+            this.btnPlayStart.Text = "Play Start";
+            this.btnPlayStart.UseVisualStyleBackColor = true;
+            this.btnPlayStart.Click += new System.EventHandler(this.btnPlayStart_Click);
+            // 
+            // btnPlayEnd
+            // 
+            this.btnPlayEnd.Location = new System.Drawing.Point(102, 385);
+            this.btnPlayEnd.Name = "btnPlayEnd";
+            this.btnPlayEnd.Size = new System.Drawing.Size(75, 23);
+            this.btnPlayEnd.TabIndex = 9;
+            this.btnPlayEnd.Text = "Play End";
+            this.btnPlayEnd.UseVisualStyleBackColor = true;
+            this.btnPlayEnd.Click += new System.EventHandler(this.btnPlayEnd_Click);
+            // 
+            // btnSetStart
+            // 
+            this.btnSetStart.Location = new System.Drawing.Point(21, 356);
+            this.btnSetStart.Name = "btnSetStart";
+            this.btnSetStart.Size = new System.Drawing.Size(75, 23);
+            this.btnSetStart.TabIndex = 8;
+            this.btnSetStart.Text = "Set Start";
+            this.btnSetStart.UseVisualStyleBackColor = true;
+            this.btnSetStart.Click += new System.EventHandler(this.btnSetStart_Click);
+            // 
+            // btnSetEnd
+            // 
+            this.btnSetEnd.Location = new System.Drawing.Point(102, 356);
+            this.btnSetEnd.Name = "btnSetEnd";
+            this.btnSetEnd.Size = new System.Drawing.Size(75, 23);
+            this.btnSetEnd.TabIndex = 7;
+            this.btnSetEnd.Text = "Set End";
+            this.btnSetEnd.UseVisualStyleBackColor = true;
+            this.btnSetEnd.Click += new System.EventHandler(this.btnSetEnd_Click);
+            // 
             // btnPlay
             // 
             this.btnPlay.Location = new System.Drawing.Point(102, 327);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(75, 23);
             this.btnPlay.TabIndex = 6;
-            this.btnPlay.Text = "Play";
+            this.btnPlay.Text = "Taatik";
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
@@ -170,46 +210,6 @@
             this.lstParagraphs.Size = new System.Drawing.Size(200, 251);
             this.lstParagraphs.TabIndex = 0;
             this.lstParagraphs.SelectedIndexChanged += new System.EventHandler(this.lstParagraphs_SelectedIndexChanged);
-            // 
-            // btnSetEnd
-            // 
-            this.btnSetEnd.Location = new System.Drawing.Point(102, 356);
-            this.btnSetEnd.Name = "btnSetEnd";
-            this.btnSetEnd.Size = new System.Drawing.Size(75, 23);
-            this.btnSetEnd.TabIndex = 7;
-            this.btnSetEnd.Text = "Set End";
-            this.btnSetEnd.UseVisualStyleBackColor = true;
-            this.btnSetEnd.Click += new System.EventHandler(this.btnSetEnd_Click);
-            // 
-            // btnSetStart
-            // 
-            this.btnSetStart.Location = new System.Drawing.Point(21, 356);
-            this.btnSetStart.Name = "btnSetStart";
-            this.btnSetStart.Size = new System.Drawing.Size(75, 23);
-            this.btnSetStart.TabIndex = 8;
-            this.btnSetStart.Text = "Set Start";
-            this.btnSetStart.UseVisualStyleBackColor = true;
-            this.btnSetStart.Click += new System.EventHandler(this.btnSetStart_Click);
-            // 
-            // btnPlayEnd
-            // 
-            this.btnPlayEnd.Location = new System.Drawing.Point(102, 385);
-            this.btnPlayEnd.Name = "btnPlayEnd";
-            this.btnPlayEnd.Size = new System.Drawing.Size(75, 23);
-            this.btnPlayEnd.TabIndex = 9;
-            this.btnPlayEnd.Text = "Play End";
-            this.btnPlayEnd.UseVisualStyleBackColor = true;
-            this.btnPlayEnd.Click += new System.EventHandler(this.btnPlayEnd_Click);
-            // 
-            // btnPlayStart
-            // 
-            this.btnPlayStart.Location = new System.Drawing.Point(21, 385);
-            this.btnPlayStart.Name = "btnPlayStart";
-            this.btnPlayStart.Size = new System.Drawing.Size(75, 23);
-            this.btnPlayStart.TabIndex = 10;
-            this.btnPlayStart.Text = "Play Start";
-            this.btnPlayStart.UseVisualStyleBackColor = true;
-            this.btnPlayStart.Click += new System.EventHandler(this.btnPlayStart_Click);
             // 
             // Form1
             // 

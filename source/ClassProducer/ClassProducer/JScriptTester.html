@@ -3,14 +3,29 @@
     <meta charset="utf-8" />
     <title></title>
 
-    
+    <style>
+        .header {
+            text-align: center;
+            color: red;
+            font-family: 'Times New Roman';
+            font-size: 20px;            
+        }
+
+        .headerSelected {
+            text-align: center;
+            color: red;
+            font-family: 'Times New Roman';
+            font-size: 20px;            
+            background-color: lightblue;
+        }
+    </style>
 </head>
 <body>
 <div id ="contentDiv" style="width:100%;height:100%" dir="rtl">
 
 </div>
     <script>
-
+        var jsonParagraphs = null;
         function processStory(json) {
             var story = JSON.parse(request.responseText);
             var lines = story.Lines;
@@ -22,11 +37,16 @@
                 for (ln = paragraphs[i]._StartLine ; ln < paragraphs[i]._EndLine ; ++ln)
                     Text += lines[ln] + "<br>"
                 newP.innerHTML = Text;
+                if (i == 0)
+                    newP.className = "headerSelected"
+                paragraphs[i].domElement = newP;
                 mainDiv.appendChild(newP);
             }
+
+            jsonParagraphs = paragraphs;
         }
         var request = new XMLHttpRequest();
-        request.open("GET", "https://rawgit.com/dplusd/LaBaignoireRoot/master/source/ClassProducer/ClassProducer/bin/Debug/obj.json", true);
+        request.open("GET", "https://raw.githubusercontent.com/dplusd/LaBaignoireRoot/master/source/ClassProducer/ClassProducer/bin/Debug/obj.json", true);
         request.onload = function (e) {
             if (request.readyState === 4) {
                 if (request.status === 200) {

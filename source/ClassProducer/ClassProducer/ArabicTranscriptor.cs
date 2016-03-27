@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 namespace ClassProducer
 {
@@ -37,6 +39,18 @@ namespace ClassProducer
             reader.Close();
             return RetVal;
 
+        }
+        
+
+        public static void ToJson()
+        {
+            FileStream stream1 = new FileStream("taatik_rules.json", FileMode.Create);
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(ArabicToTaatik[]));
+            List <ArabicToTaatik> map = new List<ArabicToTaatik>();
+            foreach (char c in CHAR_MAP.Keys)
+                map.Add(new ArabicToTaatik(c, CHAR_MAP[c]));
+            ser.WriteObject(stream1, map.ToArray());
+            stream1.Close();
         }
 
         public static string Transcript(string source)

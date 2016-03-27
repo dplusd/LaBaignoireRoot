@@ -110,7 +110,8 @@ namespace ClassProducer
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            rtbText.Text = story.Taatik;
+            //rtbText.Text = story.Taatik;
+            ArabicTranscriptor.ToJson();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
