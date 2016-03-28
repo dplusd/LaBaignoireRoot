@@ -81,7 +81,7 @@ function goToPar(which) {
         return;
     if (selectedPar + which < 0 || selectedPar + which >= jsonParagraphs.length)
         return
-    var pos = jsonParagraphs[selectedPar + which].StartAudioPos - 2
+    var pos = jsonParagraphs[selectedPar + which].StartAudioPos - 5
     if (pos < 0)
         pos = 0;
     document.getElementById("audioStream").currentTime = pos;
